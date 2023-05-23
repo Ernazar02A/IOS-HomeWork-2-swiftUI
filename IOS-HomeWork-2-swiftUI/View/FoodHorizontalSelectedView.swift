@@ -18,25 +18,32 @@ struct FoodHorizontalSelectedView: View {
             Image("paul")
                 .offset(x:210,y: 8)
             VStack(alignment: .leading) {
-                Text("Paul")
-                    .font(.system(size: 16,weight: .bold))
-                Text("French Pasta")
-                    .font(.system(size: 10,weight: .light))
-                    .foregroundColor(Color(red: 0.58, green: 0.58, blue: 0.58))
-                Text("Delivery: FREE • Minimum: $0")
-                    .font(.system(size: 10,weight: .light))
-                    .foregroundColor(Color(red: 0.58, green: 0.58, blue: 0.58))
+                CustomTextView(text: "Paul",
+                               size: 16,
+                               font: .poppinsBold)
+                CustomTextView(text: "French Pasta",
+                               size: 10,
+                               font: .poppinsLight,
+                               foregroundColor: Color(red: 0.58, green: 0.58, blue: 0.58))
+                CustomTextView(text: "Delivery: FREE • Minimum: $0",
+                               size: 10,
+                               font: .poppinsLight,
+                               foregroundColor: Color(red: 0.58, green: 0.58, blue: 0.58))
                 
             }.padding(.leading,15)
             HStack {
                 Image(systemName: "star.fill")
                     .resizable().frame(width: 10,height: 10)
-                Text("4.2").font(.system(size: 12,weight: .bold))
+                CustomTextView(text: "4.2",
+                               size: 12,
+                               font: .poppinsBold)
                 Circle()
                     .frame(width: 3.5,height: 3.5)
                     .foregroundColor(Color.gray)
                 Image(systemName: "clock")
-                Text("25 Mins").font(.system(size: 12,weight: .bold))
+                CustomTextView(text: "25 Mins",
+                               size: 12,
+                               font: .poppinsBold)
             }.offset(x:90,y: 50)
         }.padding(.leading,7)
     }

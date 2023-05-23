@@ -36,7 +36,7 @@ struct CustomTabBar: View {
                     
                     Spacer()
                     
-                }//Color(red: 0.21, green: 0.19, blue: 0.19)
+                }
             }
             .frame(width: UIScreen.main.bounds.size.width / 1.13, height: 75)
             .background(Color.black)

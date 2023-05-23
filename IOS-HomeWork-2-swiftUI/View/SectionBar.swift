@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct Indication {
-    let image: String
+    let imageWhite: String
+    let imageBlack: String
     let name: String
 }
 
 struct SectionBar: View {
     
-    let sections: [Indication] = [Indication(image: "bicycle", name: "Delivary"),
-                                  Indication(image: "bag.fill", name: "Takeaway"),
-                                  Indication(image: "mug.fill", name: "Catering"),
-                                  Indication(image: "car.fill", name: "Carbside"),
-                                  Indication(image: "banknote.fill", name: "Offers")]
+    let sections: [Indication] = [Indication(imageWhite: "deliveryWhite",                                              imageBlack: "deliveryBlack",
+                                             name: "Delivary"),
+                                  Indication(imageWhite: "takeawayWhite",                imageBlack: "takeawayBlack",
+                                             name: "Takeaway"),
+                                  Indication(imageWhite: "cateringWhite",                imageBlack: "cateringBlack",
+                                             name: "Catering"),
+                                  Indication(imageWhite: "carbsideWhite",                imageBlack: "curbsideBlack",
+                                             name: "Carbside"),
+                                  Indication(imageWhite: "offersWhite",                  imageBlack: "offersBlack",
+                                             name: "Offers")]
     @State var selectedSection: Int = 0
 
     var body: some View {
@@ -48,14 +54,12 @@ struct SectionView: View {
     var section: Indication
     var body: some View {
             HStack {
-                Image(systemName: section.image)
+                Image(isActive ? section.imageWhite : section.imageBlack)
                     .resizable()
                     .frame(width: 25,height: 25)
-                    .foregroundColor(isActive ? .white : .black)
                 
-                if isActive { Text(section.name)
-                        .foregroundColor(.white)
-                        .font(.system(size: 10,weight: .medium))
+                if isActive {
+                    CustomTextView(text: section.name, size: 10, font: .poppinsMedium,foregroundColor: .white)
                 }
             }
             .padding(.all,11)

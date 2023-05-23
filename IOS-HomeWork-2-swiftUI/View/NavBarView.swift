@@ -11,29 +11,32 @@ struct NavBarView: View {
     @State var selection: Int? = nil
     var body: some View {
         HStack {
-            Button {} label: {
-                Image("menu")
-            }
+            CustomButtonViewWithImage(action: {}, Image: Image("menu"),width: 33,height: 20)
             Spacer()
             VStack {
-                Text("Delivering to")
-                    .font(.system(size: 12))
-                    .foregroundColor(Color.black
-                        .opacity(0.5))
-                    .padding(.trailing, 23)
+                CustomTextView(text: "Delivering to",
+                               size: 12,
+                               font: .poppinsReguler,
+                               foregroundColor: .black.opacity(0.5))
+                .padding(.trailing,23)
                 HStack {
-                    Text("Manas Ave")
-                        .font(.system(size: 16))
-                    NavigationLink( destination: LocationViewScreen(),
-                                    tag: 1,
-                                    selection: $selection) {
-                        Button {
-                            print("tapped")
-                            self.selection = 1
-                        } label: {
-                            Image(systemName: "chevron.down")
-                        }
+                    CustomTextView(text: "Manas Ave",
+                                   size: 16,
+                                   font: .poppinsMedium,
+                                   backgroundColor: .clear)
+                    NavigationLink {
+                        LocationViewScreen()
+                    } label: {
+                        Image("delivaryMap")
                     }
+
+//                    NavigationLink( destination: LocationViewScreen(),
+//                                    tag: 1,
+//                                    selection: $selection) {
+//                        CustomButtonViewWithImage(action: {
+//                            self.selection = 1
+//                        }, Image: Image("delivaryMap"),width: 12,height: 7.2)
+//                    }
                     
                 }
             }

@@ -26,24 +26,28 @@ struct FoodVerticalSelectView: View {
             VStack {
                 Image(image)
                     .offset(y:-60)
-                VStack {
-                    Text(name)
-                        .font(.system(size: 16,weight: .bold))
-                    Text(type)
-                        .font(.system(size: 10,weight: .light))
-                        .foregroundColor(Color(red: 0.58, green: 0.58, blue: 0.58))
-                    Text("Delivery: FREE • Minimum: $\(price)")
-                        .font(.system(size: 10,weight: .light))
-                        .foregroundColor(Color(red: 0.58, green: 0.58, blue: 0.58))
+                VStack(alignment: .leading) {
+                    CustomTextView(text: name,
+                                   size: 16,
+                                   font: .poppinsBold)
+                    CustomTextView(text: type,
+                                   size: 10,
+                                   font: .poppinsLight,foregroundColor: Color(red: 0.58, green: 0.58, blue: 0.58))
+                    CustomTextView(text: "Delivery: FREE • Minimum: $\(price)",              size: 10,
+                                   font: .poppinsLight,foregroundColor: Color(red: 0.58, green: 0.58, blue: 0.58))
                     HStack {
                         Image(systemName: "star.fill")
                             .resizable().frame(width: 10,height: 10)
-                        Text(stars).font(.system(size: 12,weight: .bold))
+                        CustomTextView(text: stars,
+                                       size: 12,
+                                       font: .poppinsBold)
                         Circle()
                             .frame(width: 3.5,height: 3.5)
                             .foregroundColor(Color.gray)
                         Image(systemName: "clock")
-                        Text("\(timeReady) Mins").font(.system(size: 12,weight: .bold))
+                        CustomTextView(text: "\(timeReady) Mins",
+                                       size: 12,
+                                       font: .poppinsBold)
                     }
                 }
                 .padding(.top,-80)

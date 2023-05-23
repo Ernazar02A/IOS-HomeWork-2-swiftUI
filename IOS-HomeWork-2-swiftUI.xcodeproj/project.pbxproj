@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520EC0D22A18EC30004074DE /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 520EC0CD2A18EC30004074DE /* Poppins-Medium.ttf */; };
+		520EC0D32A18EC30004074DE /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 520EC0CE2A18EC30004074DE /* Poppins-SemiBold.ttf */; };
+		520EC0D42A18EC30004074DE /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 520EC0CF2A18EC30004074DE /* Poppins-Bold.ttf */; };
+		520EC0D52A18EC30004074DE /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 520EC0D02A18EC30004074DE /* Poppins-Light.ttf */; };
+		520EC0D62A18EC30004074DE /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 520EC0D12A18EC30004074DE /* Poppins-Regular.ttf */; };
+		520EC0DA2A191790004074DE /* CustomButtonViewWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EC0D92A191790004074DE /* CustomButtonViewWithImage.swift */; };
+		520EC0DC2A191DCF004074DE /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EC0DB2A191DCF004074DE /* CustomTextView.swift */; };
+		520EC0DE2A1AADCF004074DE /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520EC0DD2A1AADCF004074DE /* CustomImageView.swift */; };
 		522F18BA2A161E5700558F21 /* SectionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F18B92A161E5700558F21 /* SectionBar.swift */; };
 		522F18BC2A1645FB00558F21 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522F18BB2A1645FB00558F21 /* Launch Screen.storyboard */; };
 		522F18BE2A16520000558F21 /* LocationViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522F18BD2A16520000558F21 /* LocationViewScreen.swift */; };
@@ -22,6 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520EC0CD2A18EC30004074DE /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		520EC0CE2A18EC30004074DE /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		520EC0CF2A18EC30004074DE /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		520EC0D02A18EC30004074DE /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		520EC0D12A18EC30004074DE /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		520EC0D72A18EC4B004074DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		520EC0D92A191790004074DE /* CustomButtonViewWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonViewWithImage.swift; sourceTree = "<group>"; };
+		520EC0DB2A191DCF004074DE /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		520EC0DD2A1AADCF004074DE /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		522F18B92A161E5700558F21 /* SectionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBar.swift; sourceTree = "<group>"; };
 		522F18BB2A1645FB00558F21 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		522F18BD2A16520000558F21 /* LocationViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewScreen.swift; sourceTree = "<group>"; };
@@ -48,6 +65,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520EC0CC2A18EB91004074DE /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				520EC0CF2A18EC30004074DE /* Poppins-Bold.ttf */,
+				520EC0D02A18EC30004074DE /* Poppins-Light.ttf */,
+				520EC0CD2A18EC30004074DE /* Poppins-Medium.ttf */,
+				520EC0D12A18EC30004074DE /* Poppins-Regular.ttf */,
+				520EC0CE2A18EC30004074DE /* Poppins-SemiBold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		520EC0D82A19172A004074DE /* DesingSystem */ = {
+			isa = PBXGroup;
+			children = (
+				520EC0D92A191790004074DE /* CustomButtonViewWithImage.swift */,
+				520EC0DB2A191DCF004074DE /* CustomTextView.swift */,
+				520EC0DD2A1AADCF004074DE /* CustomImageView.swift */,
+			);
+			path = DesingSystem;
+			sourceTree = "<group>";
+		};
 		522F18C72A165C0600558F21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,7 +135,10 @@
 		528362502A14750100F2E240 /* IOS-HomeWork-2-swiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				520EC0D82A19172A004074DE /* DesingSystem */,
+				520EC0D72A18EC4B004074DE /* Info.plist */,
 				528362512A14750100F2E240 /* IOS_HomeWork_2_swiftUIApp.swift */,
+				520EC0CC2A18EB91004074DE /* Font */,
 				522F18C72A165C0600558F21 /* Model */,
 				522F18CA2A165C6700558F21 /* View */,
 				522F18CB2A165D1200558F21 /* Screens */,
@@ -173,9 +215,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520EC0D52A18EC30004074DE /* Poppins-Light.ttf in Resources */,
+				520EC0D32A18EC30004074DE /* Poppins-SemiBold.ttf in Resources */,
+				520EC0D42A18EC30004074DE /* Poppins-Bold.ttf in Resources */,
 				522F18BC2A1645FB00558F21 /* Launch Screen.storyboard in Resources */,
+				520EC0D22A18EC30004074DE /* Poppins-Medium.ttf in Resources */,
 				528362592A14750400F2E240 /* Preview Assets.xcassets in Resources */,
 				528362562A14750400F2E240 /* Assets.xcassets in Resources */,
+				520EC0D62A18EC30004074DE /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,12 +234,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				528362542A14750100F2E240 /* MainViewScreen.swift in Sources */,
+				520EC0DE2A1AADCF004074DE /* CustomImageView.swift in Sources */,
 				522F18BA2A161E5700558F21 /* SectionBar.swift in Sources */,
 				522F18BE2A16520000558F21 /* LocationViewScreen.swift in Sources */,
 				522F18C42A165B5200558F21 /* FoodHorizontalSelectedView.swift in Sources */,
 				522F18C62A165B9200558F21 /* FoodVerticalSelectView.swift in Sources */,
+				520EC0DC2A191DCF004074DE /* CustomTextView.swift in Sources */,
 				522F18C92A165C1600558F21 /* Food.swift in Sources */,
 				528362602A15DDA300F2E240 /* CustomTabBar.swift in Sources */,
+				520EC0DA2A191790004074DE /* CustomButtonViewWithImage.swift in Sources */,
 				522F18C02A1659A300558F21 /* NavBarView.swift in Sources */,
 				528362522A14750100F2E240 /* IOS_HomeWork_2_swiftUIApp.swift in Sources */,
 			);
@@ -326,6 +376,7 @@
 				DEVELOPMENT_TEAM = F7W7R66652;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IOS-HomeWork-2-swiftUI/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -356,6 +407,7 @@
 				DEVELOPMENT_TEAM = F7W7R66652;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "IOS-HomeWork-2-swiftUI/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

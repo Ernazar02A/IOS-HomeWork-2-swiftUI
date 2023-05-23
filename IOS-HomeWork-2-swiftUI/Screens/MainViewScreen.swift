@@ -24,9 +24,10 @@ struct MainViewScreen: View {
                 VStack(alignment: .leading,spacing: 15) {
                     NavBarView()
                     SectionBar()
-                    Text("56 stores open")
-                        .foregroundColor(.black)
-                        .font(.system(size: 16,weight: .medium))
+                    
+                    CustomTextView(text: "56 stores open",
+                                   size: 16, font: .poppinsMedium,
+                                   backgroundColor: .clear)
                         .padding(.leading)
                     
                     SearchBarView(textFromTF: $textFromTF).padding(.leading,5)
@@ -65,12 +66,8 @@ struct SearchBarView: View {
             .background(Color.white)
             .cornerRadius(15)
             .shadow(radius: 5)
-            Button {} label: {
-                Image(systemName: "slider.horizontal.3")
-                    .resizable()
-                    .frame(width: 24,height: 24).foregroundColor(.black)
-            }
-            .padding()
+
+            CustomButtonViewWithImage(action: {}, Image: Image(systemName:  "slider.horizontal.3"),width: 24,height: 24,foregColor: .black).padding(.horizontal)
         }
     }
 }
