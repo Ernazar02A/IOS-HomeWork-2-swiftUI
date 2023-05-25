@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct MainViewScreen: View {
     @State private var selectedTab: Tab = .house
+    
+    @State private var data: [Product] = []
     
     private let foods:[Food] = [
         Food(name: "Tony Roma's", type: "Ribs & Steaks", image: "romaFoodImage", price: "20", stars: "4.5", timeReady: "35"),
@@ -28,23 +31,56 @@ struct MainViewScreen: View {
                     CustomTextView(text: "56 stores open",
                                    size: 16, font: .poppinsMedium,
                                    backgroundColor: .clear)
-                        .padding(.leading)
+                    .padding(.leading)
                     
                     SearchBarView(textFromTF: $textFromTF).padding(.leading,5)
                     ScrollView(.horizontal,showsIndicators: false) {
                         HStack {
-                            ForEach(foods,id: \.self) { result in
-                                FoodVerticalSelectView(name: result.name, type: result.type, image: result.image, price: result.price, stars: result.stars, timeReady: result.timeReady)
+                            ForEach(data, id: \.self) { result in
+                                NavigationLink {
+                                    DetailViewScreen(product: result, image: getImage(url: result.thumbnail ?? ""))
+                                } label: {
+                                    ProductVerticalSelectView(name: result.title ?? "" ,
+                                                              type: result.brand ?? "",
+                                                              image:getImage(url: result.thumbnail ?? ""),
+                                                              price: String(result.price ?? 0),
+                                                              stars: String(result.rating ?? 0),
+                                                              timeReady: "10").padding(.horizontal,5)
+                                }
                             }
                         }
+                        .foregroundColor(.black)
+                        .padding()
                     }
                     FoodHorizontalSelectedView()
                     CustomTabBar(selectedTab: $selectedTab)
                 }
-                .padding()
+            }
+        }.onAppear {
+            apiUpdate()
+        }
+        
+    }
+    private func apiUpdate() {
+        ApiManager.shared.getDate { result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    self.data = data.products ?? []
+                    print(data)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
+
+    private func getImage(url: String) -> KFImage {
+        let urlImage = URL(string: url)
+        let kfImage = KFImage(urlImage)
+        return kfImage
+    }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -53,21 +89,4 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct SearchBarView: View {
-    @Binding var textFromTF: String
-    var body: some View {
-        HStack {
-            HStack {
-                Image(systemName: "magnifyingglass")
-                TextField("Find restaurant by name", text: $textFromTF)
-            }
-            .padding(.all)
-            .frame(height: 55)
-            .background(Color.white)
-            .cornerRadius(15)
-            .shadow(radius: 5)
 
-            CustomButtonViewWithImage(action: {}, Image: Image(systemName:  "slider.horizontal.3"),width: 24,height: 24,foregColor: .black).padding(.horizontal)
-        }
-    }
-}

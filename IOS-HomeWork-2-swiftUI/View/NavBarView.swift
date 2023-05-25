@@ -29,15 +29,6 @@ struct NavBarView: View {
                     } label: {
                         Image("delivaryMap")
                     }
-
-//                    NavigationLink( destination: LocationViewScreen(),
-//                                    tag: 1,
-//                                    selection: $selection) {
-//                        CustomButtonViewWithImage(action: {
-//                            self.selection = 1
-//                        }, Image: Image("delivaryMap"),width: 12,height: 7.2)
-//                    }
-                    
                 }
             }
             .foregroundColor(Color.black)

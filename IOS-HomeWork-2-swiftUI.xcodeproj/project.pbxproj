@@ -27,6 +27,12 @@
 		528362562A14750400F2E240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528362552A14750400F2E240 /* Assets.xcassets */; };
 		528362592A14750400F2E240 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528362582A14750400F2E240 /* Preview Assets.xcassets */; };
 		528362602A15DDA300F2E240 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5283625F2A15DDA200F2E240 /* CustomTabBar.swift */; };
+		529B79962A1F803700AF4D4D /* DetailViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B79952A1F803700AF4D4D /* DetailViewScreen.swift */; };
+		529B79992A1F809C00AF4D4D /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B79982A1F809C00AF4D4D /* ApiManager.swift */; };
+		529B799B2A1F80BC00AF4D4D /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B799A2A1F80BC00AF4D4D /* ApiModel.swift */; };
+		529B799E2A1F80F100AF4D4D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 529B799D2A1F80F100AF4D4D /* Kingfisher */; };
+		529B79A02A1F813C00AF4D4D /* ProductVerticalSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B799F2A1F813C00AF4D4D /* ProductVerticalSelectView.swift */; };
+		529B79A22A1FB00800AF4D4D /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529B79A12A1FB00800AF4D4D /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +58,11 @@
 		528362552A14750400F2E240 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		528362582A14750400F2E240 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5283625F2A15DDA200F2E240 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		529B79952A1F803700AF4D4D /* DetailViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewScreen.swift; sourceTree = "<group>"; };
+		529B79982A1F809C00AF4D4D /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		529B799A2A1F80BC00AF4D4D /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
+		529B799F2A1F813C00AF4D4D /* ProductVerticalSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductVerticalSelectView.swift; sourceTree = "<group>"; };
+		529B79A12A1FB00800AF4D4D /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529B799E2A1F80F100AF4D4D /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				522F18C82A165C1600558F21 /* Food.swift */,
+				529B799A2A1F80BC00AF4D4D /* ApiModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -103,6 +116,8 @@
 				5283625F2A15DDA200F2E240 /* CustomTabBar.swift */,
 				522F18C32A165B5200558F21 /* FoodHorizontalSelectedView.swift */,
 				522F18C52A165B9200558F21 /* FoodVerticalSelectView.swift */,
+				529B799F2A1F813C00AF4D4D /* ProductVerticalSelectView.swift */,
+				529B79A12A1FB00800AF4D4D /* SearchBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -112,6 +127,7 @@
 			children = (
 				528362532A14750100F2E240 /* MainViewScreen.swift */,
 				522F18BD2A16520000558F21 /* LocationViewScreen.swift */,
+				529B79952A1F803700AF4D4D /* DetailViewScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -135,9 +151,9 @@
 		528362502A14750100F2E240 /* IOS-HomeWork-2-swiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				520EC0D82A19172A004074DE /* DesingSystem */,
-				520EC0D72A18EC4B004074DE /* Info.plist */,
 				528362512A14750100F2E240 /* IOS_HomeWork_2_swiftUIApp.swift */,
+				529B79972A1F808000AF4D4D /* ApiManager */,
+				520EC0D82A19172A004074DE /* DesingSystem */,
 				520EC0CC2A18EB91004074DE /* Font */,
 				522F18C72A165C0600558F21 /* Model */,
 				522F18CA2A165C6700558F21 /* View */,
@@ -145,6 +161,7 @@
 				528362552A14750400F2E240 /* Assets.xcassets */,
 				528362572A14750400F2E240 /* Preview Content */,
 				522F18BB2A1645FB00558F21 /* Launch Screen.storyboard */,
+				520EC0D72A18EC4B004074DE /* Info.plist */,
 			);
 			path = "IOS-HomeWork-2-swiftUI";
 			sourceTree = "<group>";
@@ -155,6 +172,14 @@
 				528362582A14750400F2E240 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		529B79972A1F808000AF4D4D /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				529B79982A1F809C00AF4D4D /* ApiManager.swift */,
+			);
+			path = ApiManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +198,9 @@
 			dependencies = (
 			);
 			name = "IOS-HomeWork-2-swiftUI";
+			packageProductDependencies = (
+				529B799D2A1F80F100AF4D4D /* Kingfisher */,
+			);
 			productName = "IOS-HomeWork-2-swiftUI";
 			productReference = 5283624E2A14750100F2E240 /* IOS-HomeWork-2-swiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -201,6 +229,9 @@
 				Base,
 			);
 			mainGroup = 528362452A14750100F2E240;
+			packageReferences = (
+				529B799C2A1F80F100AF4D4D /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 5283624F2A14750100F2E240 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,18 +264,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529B79A02A1F813C00AF4D4D /* ProductVerticalSelectView.swift in Sources */,
 				528362542A14750100F2E240 /* MainViewScreen.swift in Sources */,
 				520EC0DE2A1AADCF004074DE /* CustomImageView.swift in Sources */,
 				522F18BA2A161E5700558F21 /* SectionBar.swift in Sources */,
 				522F18BE2A16520000558F21 /* LocationViewScreen.swift in Sources */,
+				529B799B2A1F80BC00AF4D4D /* ApiModel.swift in Sources */,
 				522F18C42A165B5200558F21 /* FoodHorizontalSelectedView.swift in Sources */,
 				522F18C62A165B9200558F21 /* FoodVerticalSelectView.swift in Sources */,
 				520EC0DC2A191DCF004074DE /* CustomTextView.swift in Sources */,
 				522F18C92A165C1600558F21 /* Food.swift in Sources */,
 				528362602A15DDA300F2E240 /* CustomTabBar.swift in Sources */,
 				520EC0DA2A191790004074DE /* CustomButtonViewWithImage.swift in Sources */,
+				529B79992A1F809C00AF4D4D /* ApiManager.swift in Sources */,
 				522F18C02A1659A300558F21 /* NavBarView.swift in Sources */,
 				528362522A14750100F2E240 /* IOS_HomeWork_2_swiftUIApp.swift in Sources */,
+				529B79A22A1FB00800AF4D4D /* SearchBarView.swift in Sources */,
+				529B79962A1F803700AF4D4D /* DetailViewScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +485,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		529B799C2A1F80F100AF4D4D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		529B799D2A1F80F100AF4D4D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 529B799C2A1F80F100AF4D4D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 528362462A14750100F2E240 /* Project object */;
 }
