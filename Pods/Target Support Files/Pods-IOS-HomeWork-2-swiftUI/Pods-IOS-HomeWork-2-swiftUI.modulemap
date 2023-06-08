@@ -1,0 +1,6 @@
+framework module Pods_IOS_HomeWork_2_swiftUI {
+  umbrella header "Pods-IOS-HomeWork-2-swiftUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

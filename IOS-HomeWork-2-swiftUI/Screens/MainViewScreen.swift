@@ -13,6 +13,10 @@ struct MainViewScreen: View {
     
     @State private var data: [Product] = []
     
+    @State private var showingAlert = false
+    
+    @State private var codeStatus: Int = 0
+    
     private let foods:[Food] = [
         Food(name: "Tony Roma's", type: "Ribs & Steaks", image: "romaFoodImage", price: "20", stars: "4.5", timeReady: "35"),
         Food(name: "Momos", type: "Japanese", image: "momosFoodImage", price: "10", stars: "4.0", timeReady: "30"),
@@ -33,7 +37,13 @@ struct MainViewScreen: View {
                                    backgroundColor: .clear)
                     .padding(.leading)
                     
-                    SearchBarView(textFromTF: $textFromTF).padding(.leading,5)
+                    SearchBarView(textFromTF: $textFromTF, action: {
+                        let checkAlert = postApiUpdate(title: textFromTF)
+                        showingAlert = checkAlert
+                        print(codeStatus)
+                    }, alertCheck: $showingAlert, code: "\(codeStatus)", productTitle: textFromTF)
+                    .padding(.leading,5)
+                    
                     ScrollView(.horizontal,showsIndicators: false) {
                         HStack {
                             ForEach(data, id: \.self) { result in
@@ -57,20 +67,41 @@ struct MainViewScreen: View {
                 }
             }
         }.onAppear {
-            apiUpdate()
+            getApiUpdate()
+            //postApiUpdate(title: textFromTF)
         }
         
     }
-    private func apiUpdate() {
-        ApiManager.shared.getDate { result in
+    private func postApiUpdate(title: String) -> Bool{
+        guard title != "" else {return false}
+        ApiManager.shared.getDate(requestType: .post(title: title)) { result in
             switch result {
-            case .success(let data):
+            case .success(.value(let statusCode)):
+                DispatchQueue.main.async {
+                    self.codeStatus = statusCode
+                    print(statusCode)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            default:
+                break
+            }
+        }
+        return true
+    }
+    
+    private func getApiUpdate() {
+        ApiManager.shared.getDate(requestType: .get) { result in
+            switch result {
+            case .success(.model(let data)):
                 DispatchQueue.main.async {
                     self.data = data.products ?? []
                     print(data)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+            default:
+                break
             }
         }
     }

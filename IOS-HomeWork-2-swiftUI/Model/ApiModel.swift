@@ -23,4 +23,18 @@ struct Product: Codable, Hashable {
     let brand, category: String?
     let thumbnail: String?
     let images: [String]?
+    
+    init(id: Int? = nil, title: String?, description: String? = nil, price: Int? = nil, discountPercentage: Double? = nil, rating: Double? = nil, stock: Int? = nil, brand: String? = nil, category: String? = nil, thumbnail: String? = nil, images: [String]? = nil) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.price = price
+        self.discountPercentage = discountPercentage
+        self.rating = rating
+        self.stock = stock
+        self.brand = brand
+        self.category = category
+        self.thumbnail = thumbnail
+        self.images = images
+    }
 }
